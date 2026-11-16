@@ -1,13 +1,19 @@
+import java.util.HashMap;
+
 public class KillCilantro {
    public static String killCilantro (String s) {
       String result = s;
-      String x = "cilantro";
-      String y = "parsley";
-      int n = x.length();
+      HashMap<String, String> replace = new HashMap<String, String>();
+      replace.put("cilantro", "parsley");
+      
+      for (String x : replace.keySet()) {
+         int n = x.length();
+         String y = replace.get(x);
 
-      while (result.toLowerCase().indexOf(x) != -1) {
-         int i = result.toLowerCase().indexOf(x);
-         result = result.substring(0,i) + y + result.substring(i+n);
+         while (result.toLowerCase().indexOf(x) != -1) {
+            int i = result.toLowerCase().indexOf(x);
+            result = result.substring(0,i) + y + result.substring(i+n);
+         }
       }
       
       return result;
