@@ -1,10 +1,13 @@
 public class KillCilantro {
-   public static String killCilantro (String n) {
-      String result = n;
+   public static String killCilantro (String s) {
+      String result = s;
+      String x = "cilantro";
+      String y = "parsley";
+      int n = x.length();
 
-      while (result.indexOf("cilantro") != -1) {
-         int i = result.indexOf("cilantro");
-         result = result.substring(0,i) + "parsley" + result.substring(i+8);
+      while (result.toLowerCase().indexOf(x) != -1) {
+         int i = result.toLowerCase().indexOf(x);
+         result = result.substring(0,i) + y + result.substring(i+n);
       }
       
       return result;
@@ -16,5 +19,6 @@ public class KillCilantro {
       System.out.println(killCilantro("nothinghere"));
       System.out.println(killCilantro("testcilantro"));
       System.out.println(killCilantro("cilantrocilantrocilantro"));
+      System.out.println(killCilantro("CiLaNtRoTEST"));
    }
 }
